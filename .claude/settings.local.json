@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(codex exec *)",
+      "PowerShell(Out-File *)",
+      "Bash(claude *)",
+      "Bash(npm update *)",
+      "Bash(winget install *)",
+      "PowerShell(gh auth *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status)",
+      "Bash(gh api *)",
+      "Bash(git fetch *)",
+      "Bash(git branch *)",
+      "Bash(gh workflow *)",
+      "Bash(gh run *)",
+      "Bash(gh issue *)",
+      "Bash(dir *)",
+      "Bash(uv run *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(C:\\\\Python313\\\\python.exe --version; C:\\\\Users\\\\tyler\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe --version)",
+      "PowerShell(C:\\\\Python313\\\\python.exe -m pip install uv)",
+      "PowerShell(where.exe uv 2>$null; C:\\\\Python313\\\\python.exe -m uv --version)",
+      "PowerShell(C:\\\\Python313\\\\python.exe -m uv sync --extra dev --project C:\\\\Temp\\\\projects\\\\finally\\\\backend)",
+      "PowerShell(C:\\\\Python313\\\\python.exe -m uv run --project C:\\\\Temp\\\\projects\\\\finally\\\\backend C:\\\\Temp\\\\projects\\\\finally\\\\backend\\\\market_data_demo.py)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$d='C:\\Temp\\projects\\finally'; $status = (git -C $d status) -join \"`n\"; $diff = (git -C $d diff HEAD) -join \"`n\"; $out = \"# Change Review`n`n## Git Status`n``````n$status`n``````n`n## Git Diff`n``````n$diff`n``````\"; $out | Out-File -FilePath \"$d\\planning\\REVIEW.md\" -Encoding utf8",
+            "shell": "powershell",
+            "timeout": 30,
+            "statusMessage": "Writing change review..."
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {}
+}
