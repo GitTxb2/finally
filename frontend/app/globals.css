@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #0d1117;
+  --bg-panel: #11161d;
+  --bg-night: #1a1a2e;
+  --edge: #1f2630;
+  --accent-yellow: #ecad0a;
+  --accent-blue: #209dd7;
+  --accent-purple: #753991;
+  --up: #3ddc97;
+  --down: #ff5f6d;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg-base);
+  color: #e6edf3;
+  font-feature-settings: 'ss01', 'cv01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-image:
+    radial-gradient(1200px 600px at 20% -10%, rgba(32, 157, 215, 0.06), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(117, 57, 145, 0.07), transparent 60%),
+    linear-gradient(180deg, #0d1117 0%, #0b0f15 100%);
+  background-attachment: fixed;
+}
+
+/* Subtle grid texture overlay reminiscent of a trading terminal */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
+}
+
+/* Scrollbar — slim and on-brand */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2630;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a323e;
+}
+
+/* Number readability */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hairline divider */
+.hairline {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  height: 1px;
+}
+
+/* Panel base */
+.panel {
+  background: rgba(17, 22, 29, 0.85);
+  border: 1px solid #1f2630;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #1f2630;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9aa4b2;
+}
+
+/* Hot accent stripe used on key panels */
+.accent-stripe::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent-yellow) 20%, var(--accent-yellow) 80%, transparent 100%);
+}
+
+/* Focus ring */
+:where(button, input, textarea, select, a):focus-visible {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Price flash classes */
+.flash-up {
+  animation: flashUp 500ms ease-out;
+}
+.flash-down {
+  animation: flashDown 500ms ease-out;
+}

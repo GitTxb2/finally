@@ -1,0 +1,58 @@
+# VCS / editor
+.git
+.gitignore
+.gitattributes
+.github
+.vscode
+.idea
+*.swp
+
+# Project meta — not needed in image
+README.md
+LICENSE
+CLAUDE.md
+planning
+docs
+test
+
+# Top-level runtime artifacts (mounted at runtime, not baked in)
+db/*
+!db/.gitkeep
+
+# Env / secrets — supplied at runtime via --env-file
+.env
+.env.*
+!.env.example
+
+# Backend
+backend/.venv
+backend/.pytest_cache
+backend/.ruff_cache
+backend/.mypy_cache
+backend/htmlcov
+backend/.coverage
+backend/.coverage.*
+backend/**/__pycache__
+backend/**/*.py[cod]
+backend/**/*$py.class
+backend/tests
+backend/market_data_demo.py
+
+# Frontend
+frontend/node_modules
+frontend/.next
+frontend/out
+frontend/.turbo
+frontend/coverage
+frontend/.cache
+frontend/.eslintcache
+
+# Docker / CI scaffolding — no need to copy in
+Dockerfile
+docker-compose*.yml
+.dockerignore
+scripts
+
+# OS junk
+.DS_Store
+Thumbs.db

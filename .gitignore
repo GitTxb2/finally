@@ -205,3 +205,15 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# FinAlly runtime data (SQLite file lives in mounted volume; directory is checked in via .gitkeep)
+/db/*
+!/db/.gitkeep
+
+# Next.js build output (frontend static export is produced at build time, not committed)
+frontend/.next/
+frontend/out/
+
+# Node dependencies (any subdirectory)
+node_modules/
+test/test-results/

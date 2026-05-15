@@ -1,0 +1,49 @@
+# docker-compose.test.yml — E2E test harness for the FinAlly app.
+#
+# Spins up two services:
+#   1. `app`        — the production image built from the root Dockerfile,
+#                     with LLM_MOCK=true so chat responses are deterministic.
+#   2. `playwright` — a Playwright container that mounts this `test/` directory
+#                     and runs the spec suite against `http://app:8000`.
+#
+# Usage (from project root):
+#   docker compose -f test/docker-compose.test.yml build
+#   docker compose -f test/docker-compose.test.yml run --rm playwright
+#
+# Cleanup:
+#   docker compose -f test/docker-compose.test.yml down -v
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: finally:test
+    environment:
+      LLM_MOCK: "true"
+      # No MASSIVE_API_KEY — forces the built-in simulator
+      # No real OPENROUTER_API_KEY needed in mock mode, but provide an empty default
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-test-key-not-used}
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/api/health"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+      start_period: 5s
+
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.49.0-jammy
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      BASE_URL: http://app:8000
+      CI: "true"
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    command: >
+      sh -c "npm ci --no-audit --no-fund &&
+             npx playwright test"
