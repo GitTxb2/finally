@@ -149,25 +149,76 @@ Explicit exclusions; reasoning preserved so they don't get reintroduced silently
 
 ## Traceability
 
-Filled in during roadmap creation. Empty until ROADMAP.md lands.
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| APP-01..06  | TBD   | Pending |
-| DB-01..09   | TBD   | Pending |
-| PORT-01..06 | TBD   | Pending |
-| WL-01..04   | TBD   | Pending |
-| CHAT-01..07 | TBD   | Pending |
-| SENT-01..04 | TBD   | Pending |
-| FE-01..14   | TBD   | Pending |
-| PKG-01..06  | TBD   | Pending |
-| TEST-01..04 | TBD   | Pending |
-| DOC-01..03  | TBD   | Pending |
+| APP-01 | Phase 1 | Pending |
+| APP-02 | Phase 1 | Pending |
+| APP-03 | Phase 1 | Pending |
+| APP-04 | Phase 1 | Pending |
+| APP-05 | Phase 1 | Pending |
+| APP-06 | Phase 1 | Pending |
+| DB-01  | Phase 2 | Pending |
+| DB-02  | Phase 2 | Pending |
+| DB-03  | Phase 2 | Pending |
+| DB-04  | Phase 2 | Pending |
+| DB-05  | Phase 3 | Pending |
+| DB-06  | Phase 3 | Pending |
+| DB-07  | Phase 4 | Pending |
+| DB-08  | Phase 6 | Pending |
+| DB-09  | Phase 2 | Pending |
+| PORT-01 | Phase 3 | Pending |
+| PORT-02 | Phase 3 | Pending |
+| PORT-03 | Phase 3 | Pending |
+| PORT-04 | Phase 3 | Pending |
+| PORT-05 | Phase 4 | Pending |
+| PORT-06 | Phase 4 | Pending |
+| WL-01  | Phase 2 | Pending |
+| WL-02  | Phase 5 | Pending |
+| WL-03  | Phase 5 | Pending |
+| WL-04  | Phase 5 | Pending |
+| CHAT-01 | Phase 6 | Pending |
+| CHAT-02 | Phase 6 | Pending |
+| CHAT-03 | Phase 7 | Pending |
+| CHAT-04 | Phase 7 | Pending |
+| CHAT-05 | Phase 7 | Pending |
+| CHAT-06 | Phase 6 | Pending |
+| CHAT-07 | Phase 6 | Pending |
+| SENT-01 | Phase 8 | Pending |
+| SENT-02 | Phase 8 | Pending |
+| SENT-03 | Phase 8 | Pending |
+| SENT-04 | Phase 8 | Pending |
+| FE-01 | Phase 1 | Pending |
+| FE-02 | Phase 1 | Pending |
+| FE-03 | Phase 1 | Pending |
+| FE-04 | Phase 1 | Pending |
+| FE-05 | Phase 3 | Pending |
+| FE-06 | Phase 1 | Pending |
+| FE-07 | Phase 2 | Pending |
+| FE-08 | Phase 9 | Pending |
+| FE-09 | Phase 4 | Pending |
+| FE-10 | Phase 4 | Pending |
+| FE-11 | Phase 3 | Pending |
+| FE-12 | Phase 3 | Pending |
+| FE-13 | Phase 6 (render) + Phase 7 (action chips) | Pending |
+| FE-14 | Phase 5 | Pending |
+| PKG-01 | Phase 1 | Pending |
+| PKG-02 | Phase 10 | Pending |
+| PKG-03 | Phase 1 | Pending |
+| PKG-04 | Phase 10 | Pending |
+| PKG-05 | Phase 10 | Pending |
+| PKG-06 | Phase 10 | Pending |
+| TEST-01 | Cross-cutting (every phase) | Pending |
+| TEST-02 | Cross-cutting (every phase) | Pending |
+| TEST-03 | Phase 11 | Pending |
+| TEST-04 | Phase 11 | Pending |
+| DOC-01 | Phase 12 | Pending |
+| DOC-02 | Phase 12 | Pending |
+| DOC-03 | Phase 12 | Pending |
 
 **Coverage:**
 - v1 requirements: 56 total (across 10 categories)
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 56 ⚠️ (will be 0 after ROADMAP.md is written)
+- Mapped to phases: 56 ✓
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-17*
