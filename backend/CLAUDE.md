@@ -52,9 +52,13 @@ uv run --extra dev pytest --cov=app       # With coverage
 uv run --extra dev ruff check app/ tests/ # Lint
 ```
 
-## Demo
+## Running the App
+
+For local development without Docker:
 
 ```bash
-uv run market_data_demo.py   # Live terminal dashboard with simulated prices
+uv run uvicorn app.main:app --reload --port 8000
 ```
+
+Then open http://localhost:8000/api/health to verify the backend is up. The Next.js frontend (`frontend/`) is built and served via the Dockerfile in production; for frontend-only iteration run `npm run dev` inside `frontend/` against the running backend on :8000.
 
