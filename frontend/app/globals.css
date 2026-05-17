@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply h-full;
+}
+
+body {
+  @apply bg-bg-base text-zinc-100 font-mono antialiased;
+}

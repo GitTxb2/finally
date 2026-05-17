@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# --- Project negations ---
+# The root .gitignore is the Python defaults template, which excludes lib/,
+# build/, share/, parts/ as distutils artifacts. The frontend/ tree has its
+# own .gitignore but inherits these. Negate the directories we DO want
+# tracked under frontend/.
+!frontend/lib/
+!frontend/lib/**
+!frontend/build/
+!frontend/build/**
